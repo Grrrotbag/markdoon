@@ -1,5 +1,6 @@
 # Markdoon
 
+![example image](https://imgur.com/wkG1vfM.png)
 Markdoon is a simple markdown renderer which accepts input in markdown format in the left pane, and outputs HTML in the pane on the right.
 
 Rendering happens 'live', so to speak, thanks to the 'Marked' npm package.
