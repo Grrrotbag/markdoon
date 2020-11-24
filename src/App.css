@@ -1,38 +1,121 @@
-.App {
-  text-align: center;
+/* FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&family=Press+Start+2P&family=Shrikhand&display=swap");
+
+/* GLOBAL */
+:root {
+  --honeydew: #f1faee;
+  --imperial-red: #e63946;
+  --celadon-blue: #457b9d;
+  --powder-blue: #a8dadc;
+  --charcoal: #404e5c;
+  --prussian-blue: #1d3557;
+  --outrageous-orange: #fc7a57;
+  --gradient: linear-gradient(90deg, #d9afd9 0%, #97d9e1 100%);
+  --padding: 20px;
+  --header-height: 10vh;
+  --container-height: 90vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+body {
+  font-family: sans-serif;
+}
+
+/* HEADER */
+#header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--gradient);
+  height: var(--header-height);
+  font-family: "Bebas neue", cursive;
+  color: var(--outrageous-orange);
+  font-size: 3em;
+  text-shadow: 5px 5px var(--charcoal);
+}
+
+@media only screen and (max-width: 600px) {
+  #header {
+    font-size: 1.5em;
+  }
+  /*   TODO: make containers sit atop each other on small screens */
+  #body-container {
+    flex-direction: column;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* CONTAINERS */
+#body-container {
+  height: var(--container-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.pane-container {
+  height: var(--container-height);
+  width: 50vw;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#editor {
+  box-sizing: border-box;
+  height: 100%;
+  padding: var(--padding);
+  border: 0;
+  border-right: 1px solid black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#preview {
+  box-sizing: border-box;
+  height: 100%;
+  padding: var(--padding);
+  overflow: scroll;
+}
+
+/* MARKDOWN STYLES FOR PREVIEW WINDOW */
+#preview * {
+  margin-bottom: var(--padding);
+}
+
+#preview ol,
+#preview ul,
+#preview blockquote {
+  margin-left: var(--padding);
+}
+
+#preview img {
+  width: 100%;
+}
+
+#preview code {
+  background: var(--honeydew);
+  padding: 1px 4px 2px 4px;
+  font-family: monospace;
+  font-size: 16px;
+  border-radius: 3px;
+}
+
+#preview pre {
+  background: var(--honeydew);
+  padding: 5px 0 5px 5px;
+  margin-top: var(--padding);
+  overflow: scroll;
+}
+
+#preview table {
+  border-collapse: collapse;
+}
+
+#preview td,
+#preview th {
+  border: 2px solid #224b4b;
+  padding-left: 5px;
+  padding-right: 5px;
 }
